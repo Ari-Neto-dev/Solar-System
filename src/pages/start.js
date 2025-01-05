@@ -15,7 +15,7 @@ export default function PageStart() {
           height:"100vh"
         }}
       >
-        <Typography variant="h2" component="h1" textAlign="center">
+        <Typography variant="h3" component="h1" textAlign="center">
           Conheça os Planetas do Sistema Solar !
         </Typography>
         <img className="animacaoEfeitoFlutuando" src="/image/astronaut.png" alt="Astronauta Flutuando" />

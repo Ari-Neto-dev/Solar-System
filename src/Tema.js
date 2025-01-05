@@ -3,8 +3,15 @@ import { createTheme } from "@mui/material";
 const tema=createTheme({
   palette:{
     primary:{
-      main:"#EDC229"
+      main:"#EDC229",
+      contrastText:"#534285"
+    },
+    white:{
+      main:"#fff"
+
     }
+
+
 
   },
   typography:{
