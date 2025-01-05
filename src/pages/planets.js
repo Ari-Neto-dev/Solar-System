@@ -18,9 +18,22 @@ export default function PagesPlanets() {
 //função que executa quando é aberto a página//
   useEffect(()=>{
     (async()=>{
-      let respostaApi = await ApiPlanetas.obterTodos();
-      setPlanetas(respostaApi)
-      setCarregando(false);
+      try {
+        let respostaApi = await ApiPlanetas.obterTodos();
+        setPlanetas(respostaApi)
+        setCarregando(false);
+
+
+      } catch (error) {
+        setErro({
+          subtitulo:`Ovcorreu um erro em nossa API paa obter os planetas, tente novamente mais tarde.`
+
+
+        })
+        setCarregando(false);
+
+
+      }
 
     })()
 
@@ -44,10 +57,10 @@ export default function PagesPlanets() {
         planetas.map((planeta)=>(
           <Grid2 item xs={6} sm={4} md={3} lg={2} xl={2}>
           <Card className="cardVidro">
-            <Link to="/planet/test">
+            <Link to={(`/planet/${planeta?.slug}`)}>
               <CardActionArea>
                 <CardContent>
-                  <img src="" alt="" width="100%" />
+                  <img src={planeta?.imgUrl} alt={planeta?.descrição} width="100%" />
                   <Typography variant="h5" component="h2">
                    {planeta?.nome}
                   </Typography>

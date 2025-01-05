@@ -2,6 +2,7 @@ import { Button, Container, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ShareIcon from '@mui/icons-material/Share';
+import { ArrowForward } from "@mui/icons-material";
 
 export default function PagePlanet(){
   function ClickCompartilhar(){
@@ -32,7 +33,7 @@ export default function PagePlanet(){
       <img className="animacaoEfeitoGirar" src="" alt=""/>
         <Typography variant="h5" component="h1">Terra</Typography>
         <Typography variant="body1" component="p">Descrição do Planeta Terra.</Typography>
-        <Button variant="contained" size="large" onClick={()=>{ClickCompartilhar(); }}><ShareIcon/>
+        <Button variant="contained" size="large" endIcon={<ShareIcon/>} onClick={()=>{ClickCompartilhar(); }}>
             Compartilhar
           </Button>
         </Stack>
